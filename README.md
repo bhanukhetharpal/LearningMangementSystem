@@ -1,1 +1,2 @@
-# university-management-system
+#Learning-Management-System
+LMS portal made for IGDTUW.
