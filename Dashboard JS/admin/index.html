@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="calendar.css" type="text/css">
+    <link rel="stylesheet" href="message.css" type="text/css">
+    <link rel="stylesheet" href="students.css" type="text/css">
+    <link rel="stylesheet" href="professors.css" type="text/css">
+    <link rel="stylesheet" href="adduser.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation"  id="tabs-container">
+            <ul class="tabs-menu">
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+                        <h1 class="titlee">UNIVERSITY</h1>
+                    </a>
+                </li>
+                <li class="tablinks" onclick="openCity(event, 'tab-1')">
+                    <a href="#">
+                        <span class="icon"><ion-icon name="grid-outline"></ion-icon></span>
+                        <h3 class="title">Dashboard</h3>
+                    </a>
+                </li>
+                <li class="tablinks" onclick="openCity(event, 'students')">
+                    <a href="#">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <h3 class="title">Students</h3>
+                    </a>
+                </li>
+                <li class="tablinks" onclick="openCity(event, 'professors')">
+                    <a href="#">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <h3 class="title">Professors</h3>
+                    </a>
+                </li>
+                <li class="tablinks" onclick="openCity(event, 'calendr')">
+                    <a href="#">
+                        <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                        <h3 class="title"> Calendar</h3>
+                    </a>
+                </li>
+                <li class="tablinks" onclick="openCity(event, 'message')">
+                    <a href="#">
+                        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                        <h3 class="title">Message</h3>
+                    </a>
+                </li>
+                <li class="tablinks" onclick="openCity(event, 'adduser')">
+                    <a href="#">
+                        <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                        <h3 class="title">Add User</h3>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="key-outline"></ion-icon></span>
+                        <h3 class="title">Password</h3>
+                    </a>
+                </li> -->
+                <li>
+                    <a href="signout.html">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <h3 class="title">Signout</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- main -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- search -->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <!-- user -->
+                <div class="user">
+                    <img src="userpic.jpeg">
+                </div>
+            </div>
+            <div id="tab-1" class="tabcontent">
+                <!-- cards -->
+                <div class="cardBox">
+                    <div class="card">
+                        <div>
+                            <div class="cardName">Total Students</div><br>
+                            <div class="numbers">2,100</div>
+                            
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="cardName">Total Professors</div><br>
+                            <div class="numbers">800</div>
+                        
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="cardName">Total Courses</div><br>
+                            <div class="numbers">300</div>
+                            
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="library-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="cardName">New Admissions</div><br>
+                            <div class="numbers">120</div>
+                            
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="person-add-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- graphs -->
+                <div class="graphBox">
+                    <!-- <h2>Text</h2> -->
+                    <div class="box">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="box">
+                        <canvas id="attendance"></canvas>
+                    </div>
+                </div>
+
+
+                <!-- details list -->
+                <div class="details">
+                    <div class="studentdets">
+                        <div class="cardHeader">
+                            <h2>New Student Details</h2>
+                            <a href="#" class="btn">View More</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr class="tablebg">
+                                    <td>Student Name</td>
+                                    <td>Enrollment Number</td>
+                                    <td>Degree</td>
+                                    <td>Fee Status</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alexandra Vang</td>
+                                    <td>24469014</td>
+                                    <td>BTECH'25</td>
+                                    <td><span class="status delivered">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Zaki Mcdonnell</td>
+                                    <td>58219787</td>
+                                    <td>BTECH'25</td>
+                                    <td><span class="status pending">Not paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Kaylen Mathis</td>
+                                    <td>19438422</td>
+                                    <td>BTECH'25</td>
+                                    <td><span class="status pending">Not paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Manon Watt</td>
+                                    <td>35200703</td>
+                                    <td>BS'25</td>
+                                    <td><span class="status delivered">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Alessia Hansen</td>
+                                    <td>28582874</td>
+                                    <td>BS'25</td>
+                                    <td><span class="status delivered">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Thiago Bray</td>
+                                    <td>59529961</td>
+                                    <td>MS'22</td>
+                                    <td><span class="status delivered">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Francesco Riley</td>
+                                    <td>41814216</td>
+                                    <td>MS'22</td>
+                                    <td><span class="status late">Paid late</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Rowan Alfaro</td>
+                                    <td>57694829</td>
+                                    <td>MS'22</td>
+                                    <td><span class="status delivered">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Cian Bruce</td>
+                                    <td>26498020</td>
+                                    <td>MBA'22</td>
+                                    <td><span class="status late">Paid late</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Skyla Mcgowan</td>
+                                    <td>79969224</td>
+                                    <td>MBA'22</td>
+                                    <td><span class="status pending">Not paid</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- new custs-->
+                    <div class="notifs">
+                        <div class="notifc">
+                            <div class="notif"><h2>Notifications</h2></div>
+                        </div>
+                        <table>
+                            <tr>
+                                <td width="60px"><div class="imgBx"><ion-icon name="notifications-outline"></ion-icon></div></td>
+                                <td><h4>Important faculty meeting on XX/XX/20XX.<br><span>10:01 pm</span></h4></td>
+                            </tr>
+                            <tr>
+                                <td width="60px"><div class="imgBx"><ion-icon name="notifications-outline"></ion-icon></div></td>
+                                <td><h4>Online end semester exams begin for BS students from XX/XX/20XX.<br><span>12:31 pm</span></h4></td>
+                            </tr>
+                            <tr>
+                                <td width="60px"><div class="imgBx"><ion-icon name="notifications-outline"></ion-icon></div></td>
+                                <td><h4>National Holiday on XX/XX/20XX.<br><span>02:46 pm</span></h4></td>
+                            </tr>
+                            <tr>
+                                <td width="60px"><div class="imgBx"><ion-icon name="notifications-outline"></ion-icon></div></td>
+                                <td><h4>Important seminar on AI to be held on XX/XX/20XX.<br><span>03:33 pm</span></h4></td>
+                            </tr>
+                            <tr>
+                                <td width="60px"><div class="imgBx"><ion-icon name="notifications-outline"></ion-icon></div></td>
+                                <td><h4>New faculty recruitments to start from next session.<br><span>6:03 pm</span></h4></td>
+                            </tr>
+                            <tr>
+                                <td width="60px"><div class="imgBx"><ion-icon name="notifications-outline"></ion-icon></div></td>
+                                <td><h4>Campus is closed tomorrow and no classes will be held online as well.<br><span>8:18 pm</span></h4></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="students" class="tabcontent">
+              <!-- students -->
+              <h2>BTECH'24</h2>
+              <table class="content-table-students-1">
+                <thead>
+                  <tr>
+                    <th>Enrollment Number</th>
+                    <th>Student Name</th>
+                    <!-- <th>Department</th> -->
+                    <th>Mobile Number</th>
+                    <th>Email ID</th>
+                    <th>Section</th>
+                    <th>Fee Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15080229
+                    </td>
+                    <td>Denzel George</td>
+                    <td>+1 229-748-2057</td>
+                    <td>dg@gmail.com</td>
+                    <td>A1</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15065444
+                    </td>
+                    <td>Wiktor Mooney</td>
+                    <td>+1 205-559-9958</td>
+                    <td>wm@gmail.com</td>
+                    <td>B2</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16943010</td>
+                    <td>Milla Greer</td>
+                    <td>+1 234-408-0131</td>
+                    <td>mg@gmail.com</td>
+                    <td>A9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>11877097
+                    </td>
+                    <td>Celia Flower</td>
+                    <td>+1 219-901-4212</td>
+                    <td>cf@gmail.com</td>
+                    <td>B3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19180087</td>
+                    <td>Evie Cano</td>
+                    <td>+1 582-200-5012</td>
+                    <td>ec@gmail.com</td>
+                    <td>A3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422355</td>
+                    <td>Jolyon Horn</td>
+                    <td>+1 582-442-6292</td>
+                    <td>jh@gmail.com</td>
+                    <td>C3</td>
+                    <td><span class="status late">Paid late</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19183587</td>
+                    <td>Roksana Russell</td>
+                    <td>+1 719-605-2228</td>
+                    <td>rr@gmail.com</td>
+                    <td>A2</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422945</td>
+                    <td>Alessio Colley</td>
+                    <td>+1 239-749-3674</td>
+                    <td>ac@gmail.com</td>
+                    <td>C9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+               
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" class="btn" id="students-btn">View More</a>
+              <br>
+              <h2>BTECH'23</h2>
+              <table class="content-table-students-1">
+                <thead>
+                  <tr>
+                    <th>Enrollment Number</th>
+                    <th>Student Name</th>
+                    <!-- <th>Department</th> -->
+                    <th>Mobile Number</th>
+                    <th>Email ID</th>
+                    <th>Section</th>
+                    <th>Fee Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15080229
+                    </td>
+                    <td>Denzel George</td>
+                    <td>+1 229-748-2057</td>
+                    <td>dg@gmail.com</td>
+                    <td>A1</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15065444
+                    </td>
+                    <td>Wiktor Mooney</td>
+                    <td>+1 205-559-9958</td>
+                    <td>wm@gmail.com</td>
+                    <td>B2</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16943010</td>
+                    <td>Milla Greer</td>
+                    <td>+1 234-408-0131</td>
+                    <td>mg@gmail.com</td>
+                    <td>A9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>11877097
+                    </td>
+                    <td>Celia Flower</td>
+                    <td>+1 219-901-4212</td>
+                    <td>cf@gmail.com</td>
+                    <td>B3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19180087</td>
+                    <td>Evie Cano</td>
+                    <td>+1 582-200-5012</td>
+                    <td>ec@gmail.com</td>
+                    <td>A3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422355</td>
+                    <td>Jolyon Horn</td>
+                    <td>+1 582-442-6292</td>
+                    <td>jh@gmail.com</td>
+                    <td>C3</td>
+                    <td><span class="status late">Paid late</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19183587</td>
+                    <td>Roksana Russell</td>
+                    <td>+1 719-605-2228</td>
+                    <td>rr@gmail.com</td>
+                    <td>A2</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422945</td>
+                    <td>Alessio Colley</td>
+                    <td>+1 239-749-3674</td>
+                    <td>ac@gmail.com</td>
+                    <td>C9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+               
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" class="btn" id="students-btn">View More</a>
+              <br>
+              <h2>BTECH'22</h2>
+              <table class="content-table-students-1">
+                <thead>
+                  <tr>
+                    <th>Enrollment Number</th>
+                    <th>Student Name</th>
+                    <!-- <th>Department</th> -->
+                    <th>Mobile Number</th>
+                    <th>Email ID</th>
+                    <th>Section</th>
+                    <th>Fee Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15080229
+                    </td>
+                    <td>Denzel George</td>
+                    <td>+1 229-748-2057</td>
+                    <td>dg@gmail.com</td>
+                    <td>A1</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15065444
+                    </td>
+                    <td>Wiktor Mooney</td>
+                    <td>+1 205-559-9958</td>
+                    <td>wm@gmail.com</td>
+                    <td>B2</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16943010</td>
+                    <td>Milla Greer</td>
+                    <td>+1 234-408-0131</td>
+                    <td>mg@gmail.com</td>
+                    <td>A9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>11877097
+                    </td>
+                    <td>Celia Flower</td>
+                    <td>+1 219-901-4212</td>
+                    <td>cf@gmail.com</td>
+                    <td>B3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19180087</td>
+                    <td>Evie Cano</td>
+                    <td>+1 582-200-5012</td>
+                    <td>ec@gmail.com</td>
+                    <td>A3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422355</td>
+                    <td>Jolyon Horn</td>
+                    <td>+1 582-442-6292</td>
+                    <td>jh@gmail.com</td>
+                    <td>C3</td>
+                    <td><span class="status late">Paid late</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19183587</td>
+                    <td>Roksana Russell</td>
+                    <td>+1 719-605-2228</td>
+                    <td>rr@gmail.com</td>
+                    <td>A2</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422945</td>
+                    <td>Alessio Colley</td>
+                    <td>+1 239-749-3674</td>
+                    <td>ac@gmail.com</td>
+                    <td>C9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+               
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" class="btn" id="students-btn">View More</a>
+              <br>
+              <h2>BS'24</h2>
+              <table class="content-table-students-1">
+                <thead>
+                  <tr>
+                    <th>Enrollment Number</th>
+                    <th>Student Name</th>
+                    <!-- <th>Department</th> -->
+                    <th>Mobile Number</th>
+                    <th>Email ID</th>
+                    <th>Section</th>
+                    <th>Fee Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15080229
+                    </td>
+                    <td>Denzel George</td>
+                    <td>+1 229-748-2057</td>
+                    <td>dg@gmail.com</td>
+                    <td>A1</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15065444
+                    </td>
+                    <td>Wiktor Mooney</td>
+                    <td>+1 205-559-9958</td>
+                    <td>wm@gmail.com</td>
+                    <td>B2</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16943010</td>
+                    <td>Milla Greer</td>
+                    <td>+1 234-408-0131</td>
+                    <td>mg@gmail.com</td>
+                    <td>A9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>11877097
+                    </td>
+                    <td>Celia Flower</td>
+                    <td>+1 219-901-4212</td>
+                    <td>cf@gmail.com</td>
+                    <td>B3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19180087</td>
+                    <td>Evie Cano</td>
+                    <td>+1 582-200-5012</td>
+                    <td>ec@gmail.com</td>
+                    <td>A3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422355</td>
+                    <td>Jolyon Horn</td>
+                    <td>+1 582-442-6292</td>
+                    <td>jh@gmail.com</td>
+                    <td>C3</td>
+                    <td><span class="status late">Paid late</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19183587</td>
+                    <td>Roksana Russell</td>
+                    <td>+1 719-605-2228</td>
+                    <td>rr@gmail.com</td>
+                    <td>A2</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422945</td>
+                    <td>Alessio Colley</td>
+                    <td>+1 239-749-3674</td>
+                    <td>ac@gmail.com</td>
+                    <td>C9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+               
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" class="btn" id="students-btn">View More</a>
+              <br>
+              <h2>BS'23</h2>
+              <table class="content-table-students-1">
+                <thead>
+                  <tr>
+                    <th>Enrollment Number</th>
+                    <th>Student Name</th>
+                    <!-- <th>Department</th> -->
+                    <th>Mobile Number</th>
+                    <th>Email ID</th>
+                    <th>Section</th>
+                    <th>Fee Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15080229
+                    </td>
+                    <td>Denzel George</td>
+                    <td>+1 229-748-2057</td>
+                    <td>dg@gmail.com</td>
+                    <td>A1</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15065444
+                    </td>
+                    <td>Wiktor Mooney</td>
+                    <td>+1 205-559-9958</td>
+                    <td>wm@gmail.com</td>
+                    <td>B2</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16943010</td>
+                    <td>Milla Greer</td>
+                    <td>+1 234-408-0131</td>
+                    <td>mg@gmail.com</td>
+                    <td>A9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>11877097
+                    </td>
+                    <td>Celia Flower</td>
+                    <td>+1 219-901-4212</td>
+                    <td>cf@gmail.com</td>
+                    <td>B3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19180087</td>
+                    <td>Evie Cano</td>
+                    <td>+1 582-200-5012</td>
+                    <td>ec@gmail.com</td>
+                    <td>A3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422355</td>
+                    <td>Jolyon Horn</td>
+                    <td>+1 582-442-6292</td>
+                    <td>jh@gmail.com</td>
+                    <td>C3</td>
+                    <td><span class="status late">Paid late</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19183587</td>
+                    <td>Roksana Russell</td>
+                    <td>+1 719-605-2228</td>
+                    <td>rr@gmail.com</td>
+                    <td>A2</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422945</td>
+                    <td>Alessio Colley</td>
+                    <td>+1 239-749-3674</td>
+                    <td>ac@gmail.com</td>
+                    <td>C9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+               
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" class="btn" id="students-btn">View More</a>
+              <br>
+              <h2>BS'22</h2>
+              <table class="content-table-students-1">
+                <thead>
+                  <tr>
+                    <th>Enrollment Number</th>
+                    <th>Student Name</th>
+                    <!-- <th>Department</th> -->
+                    <th>Mobile Number</th>
+                    <th>Email ID</th>
+                    <th>Section</th>
+                    <th>Fee Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15080229
+                    </td>
+                    <td>Denzel George</td>
+                    <td>+1 229-748-2057</td>
+                    <td>dg@gmail.com</td>
+                    <td>A1</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15065444
+                    </td>
+                    <td>Wiktor Mooney</td>
+                    <td>+1 205-559-9958</td>
+                    <td>wm@gmail.com</td>
+                    <td>B2</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16943010</td>
+                    <td>Milla Greer</td>
+                    <td>+1 234-408-0131</td>
+                    <td>mg@gmail.com</td>
+                    <td>A9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>11877097
+                    </td>
+                    <td>Celia Flower</td>
+                    <td>+1 219-901-4212</td>
+                    <td>cf@gmail.com</td>
+                    <td>B3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19180087</td>
+                    <td>Evie Cano</td>
+                    <td>+1 582-200-5012</td>
+                    <td>ec@gmail.com</td>
+                    <td>A3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422355</td>
+                    <td>Jolyon Horn</td>
+                    <td>+1 582-442-6292</td>
+                    <td>jh@gmail.com</td>
+                    <td>C3</td>
+                    <td><span class="status late">Paid late</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19183587</td>
+                    <td>Roksana Russell</td>
+                    <td>+1 719-605-2228</td>
+                    <td>rr@gmail.com</td>
+                    <td>A2</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422945</td>
+                    <td>Alessio Colley</td>
+                    <td>+1 239-749-3674</td>
+                    <td>ac@gmail.com</td>
+                    <td>C9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+               
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" class="btn" id="students-btn">View More</a>
+              <br>
+              <h2>MBA'22</h2>
+              <table class="content-table-students-1">
+                <thead>
+                  <tr>
+                    <th>Enrollment Number</th>
+                    <th>Student Name</th>
+                    <!-- <th>Department</th> -->
+                    <th>Mobile Number</th>
+                    <th>Email ID</th>
+                    <th>Section</th>
+                    <th>Fee Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15080229
+                    </td>
+                    <td>Denzel George</td>
+                    <td>+1 229-748-2057</td>
+                    <td>dg@gmail.com</td>
+                    <td>A1</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15065444
+                    </td>
+                    <td>Wiktor Mooney</td>
+                    <td>+1 205-559-9958</td>
+                    <td>wm@gmail.com</td>
+                    <td>B2</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16943010</td>
+                    <td>Milla Greer</td>
+                    <td>+1 234-408-0131</td>
+                    <td>mg@gmail.com</td>
+                    <td>A9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>11877097
+                    </td>
+                    <td>Celia Flower</td>
+                    <td>+1 219-901-4212</td>
+                    <td>cf@gmail.com</td>
+                    <td>B3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19180087</td>
+                    <td>Evie Cano</td>
+                    <td>+1 582-200-5012</td>
+                    <td>ec@gmail.com</td>
+                    <td>A3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422355</td>
+                    <td>Jolyon Horn</td>
+                    <td>+1 582-442-6292</td>
+                    <td>jh@gmail.com</td>
+                    <td>C3</td>
+                    <td><span class="status late">Paid late</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19183587</td>
+                    <td>Roksana Russell</td>
+                    <td>+1 719-605-2228</td>
+                    <td>rr@gmail.com</td>
+                    <td>A2</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422945</td>
+                    <td>Alessio Colley</td>
+                    <td>+1 239-749-3674</td>
+                    <td>ac@gmail.com</td>
+                    <td>C9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+               
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" class="btn" id="students-btn">View More</a>
+              <br>
+              <h2>MCA'22</h2>
+              <table class="content-table-students-1">
+                <thead>
+                  <tr>
+                    <th>Enrollment Number</th>
+                    <th>Student Name</th>
+                    <!-- <th>Department</th> -->
+                    <th>Mobile Number</th>
+                    <th>Email ID</th>
+                    <th>Section</th>
+                    <th>Fee Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15080229
+                    </td>
+                    <td>Denzel George</td>
+                    <td>+1 229-748-2057</td>
+                    <td>dg@gmail.com</td>
+                    <td>A1</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15065444
+                    </td>
+                    <td>Wiktor Mooney</td>
+                    <td>+1 205-559-9958</td>
+                    <td>wm@gmail.com</td>
+                    <td>B2</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16943010</td>
+                    <td>Milla Greer</td>
+                    <td>+1 234-408-0131</td>
+                    <td>mg@gmail.com</td>
+                    <td>A9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>11877097
+                    </td>
+                    <td>Celia Flower</td>
+                    <td>+1 219-901-4212</td>
+                    <td>cf@gmail.com</td>
+                    <td>B3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19180087</td>
+                    <td>Evie Cano</td>
+                    <td>+1 582-200-5012</td>
+                    <td>ec@gmail.com</td>
+                    <td>A3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422355</td>
+                    <td>Jolyon Horn</td>
+                    <td>+1 582-442-6292</td>
+                    <td>jh@gmail.com</td>
+                    <td>C3</td>
+                    <td><span class="status late">Paid late</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19183587</td>
+                    <td>Roksana Russell</td>
+                    <td>+1 719-605-2228</td>
+                    <td>rr@gmail.com</td>
+                    <td>A2</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422945</td>
+                    <td>Alessio Colley</td>
+                    <td>+1 239-749-3674</td>
+                    <td>ac@gmail.com</td>
+                    <td>C9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+               
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" class="btn" id="students-btn">View More</a>
+              <br>
+              <h2>MTECH'22</h2>
+              <table class="content-table-students-1">
+                <thead>
+                  <tr>
+                    <th>Enrollment Number</th>
+                    <th>Student Name</th>
+                    <!-- <th>Department</th> -->
+                    <th>Mobile Number</th>
+                    <th>Email ID</th>
+                    <th>Section</th>
+                    <th>Fee Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15080229
+                    </td>
+                    <td>Denzel George</td>
+                    <td>+1 229-748-2057</td>
+                    <td>dg@gmail.com</td>
+                    <td>A1</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15065444
+                    </td>
+                    <td>Wiktor Mooney</td>
+                    <td>+1 205-559-9958</td>
+                    <td>wm@gmail.com</td>
+                    <td>B2</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16943010</td>
+                    <td>Milla Greer</td>
+                    <td>+1 234-408-0131</td>
+                    <td>mg@gmail.com</td>
+                    <td>A9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>11877097
+                    </td>
+                    <td>Celia Flower</td>
+                    <td>+1 219-901-4212</td>
+                    <td>cf@gmail.com</td>
+                    <td>B3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19180087</td>
+                    <td>Evie Cano</td>
+                    <td>+1 582-200-5012</td>
+                    <td>ec@gmail.com</td>
+                    <td>A3</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422355</td>
+                    <td>Jolyon Horn</td>
+                    <td>+1 582-442-6292</td>
+                    <td>jh@gmail.com</td>
+                    <td>C3</td>
+                    <td><span class="status late">Paid late</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>19183587</td>
+                    <td>Roksana Russell</td>
+                    <td>+1 719-605-2228</td>
+                    <td>rr@gmail.com</td>
+                    <td>A2</td>
+                    <td><span class="status delivered">Paid</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <td>14422945</td>
+                    <td>Alessio Colley</td>
+                    <td>+1 239-749-3674</td>
+                    <td>ac@gmail.com</td>
+                    <td>C9</td>
+                    <td><span class="status pending">Not paid</span></td>
+                    
+                  </tr>
+               
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" class="btn" id="students-btn">View More</a>
+              <br>
+              <br><br><br>
+            </div>
+            <div id="professors" class="tabcontent">
+                <!-- students -->
+                <h2>Computer Science Dept.</h2>
+                <table class="content-table-students-1">
+                  <thead>
+                    <tr>
+                      
+                      <th>Name</th>
+                      <th>Degree</th>
+                      <!-- <th>Department</th> -->
+                      <th>Mobile Number</th>
+                      <th>Email ID</th>
+                      
+                      <th>Years of experience</th>
+                      <th>Speciality</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      
+                      <td>Denzel George</td>
+                      <td>PhD
+                    </td>
+                      <td>+1 229-748-2057</td>
+                      <td>dg@gmail.com</td>
+                      <td>4 years</td>
+                      <td>Machine Learning</td>
+                      
+                    </tr>
+                    <tr>
+                      
+                      <td>Wiktor Mooney</td>
+                      <td>MTech
+                    </td>
+                      <td>+1 205-559-9958</td>
+                      <td>wm@gmail.com</td>
+                      <td>1  year</td>
+                      <td>DBMS</td>
+                      
+                    </tr>
+                    <tr>
+                      
+                      <td>Milla Greer</td>
+                      <td>MTech</td>
+                      <td>+1 234-408-0131</td>
+                      <td>mg@gmail.com</td>
+                      <td>3 years</td>
+                      <td>Cloud Computing</td>
+                      
+                    </tr>
+                    <tr>
+                      
+                      <td>Celia Flower</td>
+                      <td>PhD
+                    </td>
+                      <td>+1 219-901-4212</td>
+                      <td>cf@gmail.com</td>
+                      <td>10 years</td>
+                      <td>Cyber Security</td>
+                      
+                    </tr>
+                    <tr>
+                      
+                      <td>Evie Cano</td>
+                      <td>MPhil</td>
+                      <td>+1 582-200-5012</td>
+                      <td>ec@gmail.com</td>
+                      <td>6 years</td>
+                      <td>Data Structures and Algorithms</td>
+                      
+                    </tr>
+                    <tr>
+                      
+                      <td>Jolyon Horn</td>
+                      <td>PhD</td>
+                      <td>+1 582-442-6292</td>
+                      <td>jh@gmail.com</td>
+                      <td>11 years</td>
+                      <td>Machine Learning</td>
+                      
+                    </tr>
+                    <tr>
+                      
+                      <td>Roksana Russell</td>
+                      <td>MS</td>
+                      <td>+1 719-605-2228</td>
+                      <td>rr@gmail.com</td>
+                      <td>2 years</td>
+                      <td>Data Structures and Algorithms</td>
+                      
+                    </tr>
+                    <tr>
+                      
+                      <td>Alessio Colley</td>
+                      <td>PhD</td>
+                      <td>+1 239-749-3674</td>
+                      <td>ac@gmail.com</td>
+                      <td>5 years</td>
+                      <td>Data Science</td>
+                      
+                    </tr>
+                 
+                    </tr>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="#" class="btn" id="students-btn">View More</a>
+                <br>
+                <h2>Mechanical Dept.</h2>
+                <table class="content-table-students-1">
+                    <thead>
+                        <tr>
+                          
+                          <th>Name</th>
+                          <th>Degree</th>
+                          <!-- <th>Department</th> -->
+                          <th>Mobile Number</th>
+                          <th>Email ID</th>
+                          
+                          <th>Years of experience</th>
+                          <th>Speciality</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          
+                          <td>Denzel George</td>
+                          <td>PhD
+                        </td>
+                          <td>+1 229-748-2057</td>
+                          <td>dg@gmail.com</td>
+                          <td>4 years</td>
+                          <td>Machine Learning</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Wiktor Mooney</td>
+                          <td>MTech
+                        </td>
+                          <td>+1 205-559-9958</td>
+                          <td>wm@gmail.com</td>
+                          <td>1  year</td>
+                          <td>DBMS</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Milla Greer</td>
+                          <td>MTech</td>
+                          <td>+1 234-408-0131</td>
+                          <td>mg@gmail.com</td>
+                          <td>3 years</td>
+                          <td>Cloud Computing</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Celia Flower</td>
+                          <td>PhD
+                        </td>
+                          <td>+1 219-901-4212</td>
+                          <td>cf@gmail.com</td>
+                          <td>10 years</td>
+                          <td>Cyber Security</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Evie Cano</td>
+                          <td>MPhil</td>
+                          <td>+1 582-200-5012</td>
+                          <td>ec@gmail.com</td>
+                          <td>6 years</td>
+                          <td>Data Structures and Algorithms</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Jolyon Horn</td>
+                          <td>PhD</td>
+                          <td>+1 582-442-6292</td>
+                          <td>jh@gmail.com</td>
+                          <td>11 years</td>
+                          <td>Machine Learning</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Roksana Russell</td>
+                          <td>MS</td>
+                          <td>+1 719-605-2228</td>
+                          <td>rr@gmail.com</td>
+                          <td>2 years</td>
+                          <td>Data Structures and Algorithms</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Alessio Colley</td>
+                          <td>PhD</td>
+                          <td>+1 239-749-3674</td>
+                          <td>ac@gmail.com</td>
+                          <td>5 years</td>
+                          <td>Data Science</td>
+                          
+                        </tr>
+                     
+                        </tr>
+                        </tr>
+                      </tbody>
+                    </table>
+                <a href="#" class="btn" id="students-btn">View More</a>
+                <br>
+                <h2>Management Dept.</h2>
+                <table class="content-table-students-1">
+                    <thead>
+                        <tr>
+                          
+                          <th>Name</th>
+                          <th>Degree</th>
+                          <!-- <th>Department</th> -->
+                          <th>Mobile Number</th>
+                          <th>Email ID</th>
+                          
+                          <th>Years of experience</th>
+                          <th>Speciality</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          
+                          <td>Denzel George</td>
+                          <td>PhD
+                        </td>
+                          <td>+1 229-748-2057</td>
+                          <td>dg@gmail.com</td>
+                          <td>4 years</td>
+                          <td>Machine Learning</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Wiktor Mooney</td>
+                          <td>MTech
+                        </td>
+                          <td>+1 205-559-9958</td>
+                          <td>wm@gmail.com</td>
+                          <td>1  year</td>
+                          <td>DBMS</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Milla Greer</td>
+                          <td>MTech</td>
+                          <td>+1 234-408-0131</td>
+                          <td>mg@gmail.com</td>
+                          <td>3 years</td>
+                          <td>Cloud Computing</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Celia Flower</td>
+                          <td>PhD
+                        </td>
+                          <td>+1 219-901-4212</td>
+                          <td>cf@gmail.com</td>
+                          <td>10 years</td>
+                          <td>Cyber Security</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Evie Cano</td>
+                          <td>MPhil</td>
+                          <td>+1 582-200-5012</td>
+                          <td>ec@gmail.com</td>
+                          <td>6 years</td>
+                          <td>Data Structures and Algorithms</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Jolyon Horn</td>
+                          <td>PhD</td>
+                          <td>+1 582-442-6292</td>
+                          <td>jh@gmail.com</td>
+                          <td>11 years</td>
+                          <td>Machine Learning</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Roksana Russell</td>
+                          <td>MS</td>
+                          <td>+1 719-605-2228</td>
+                          <td>rr@gmail.com</td>
+                          <td>2 years</td>
+                          <td>Data Structures and Algorithms</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>Alessio Colley</td>
+                          <td>PhD</td>
+                          <td>+1 239-749-3674</td>
+                          <td>ac@gmail.com</td>
+                          <td>5 years</td>
+                          <td>Data Science</td>
+                          
+                        </tr>
+                     
+                        </tr>
+                        </tr>
+                      </tbody>
+                    </table>
+                
+             
+               
+                <br>
+                <br><br><br>
+              </div>
+            <div id="message" class="tabcontent">
+                <!-- message -->
+                <div class="container-message">
+                    <span class="big-circle"></span>
+                    <img src="userpic.jpeg" class="square" alt="" />
+                    <div class="form-chat">
+                      <div class="contact-info">
+                        <h3 class="title-message">Message</h3>
+                        <p class="text">
+                          People who are online right now
+                        </p>
+              
+                        <div class="info">
+                          <div class="information">
+                            <img src="online.png" class="icon" alt="" />
+                            <p>Dr. Callen Rooney, CS Dept.</p>
+                          </div>
+                          <div class="information">
+                            <img src="online.png" class="icon" alt="" />
+                            <p>Student Maci Sears, Mech Dept.</p>
+                          </div>
+                          <div class="information">
+                            <img src="online.png" class="icon" alt="" />
+                            <p>Matt Parsons, ADMIN</p>
+                          </div>
+                          <div class="information">
+                            <img src="online.png" class="icon" alt="" />
+                            <p>Dr. Kailum Fenton, Astrophysics Dept.</p>
+                          </div>
+                        </div>
+              
+                        <div class="social-media">
+                          <p>Ongoing chats :</p>
+                          <div class="social-icons">
+                            <a href="#">
+                                <ion-icon name="chatbubble-outline"></ion-icon>
+                                <h4>Dean(International Affairs)</h4>
+                            </a>
+                            <a href="#">
+                                <ion-icon name="chatbubble-outline"></ion-icon>
+                                <h4>HOD(Management)</h4>
+                            </a>
+                            <a href="#">
+                                <ion-icon name="chatbubble-outline"></ion-icon>
+                                <h4>Additional Registrar</h4>
+                            </a>
+                            <a href="#">
+                                <ion-icon name="chatbubble-outline"></ion-icon>
+                                <h4>BTECH Student</h4>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="contact-form">
+                        <span class="circle one"></span>
+                        <span class="circle two"></span>
+              
+                        <form action="index.html" autocomplete="off">
+                          <h3 class="title"></h3>
+                          
+                          <div class="input-container">
+                            <input type="email" name="email" class="input" placeholder="Email ID"/>
+                            <label for=""></label>
+                            <!-- <span>Email ID</span> -->
+                          </div>
+                          <div class="input-container">
+                            <input type="text" name="name" class="input" placeholder="BCC"/>
+                            <label for=""></label>
+                            <span></span>
+                          </div>
+                          <div class="input-container">
+                            <input type="tel" name="phone" class="input" placeholder="Subject"/>
+                            <label for=""></label>
+                            <span></span>
+                          </div>
+                          <div class="input-container textarea">
+                            <textarea name="message" class="input" placeholder="Message"></textarea>
+                            <label for=""></label>
+                            <span></span>
+                          </div>
+                          <input type="submit" value="Send" class="btn-message" />
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div id="calendr" class="tabcontent">
+                <!-- calendar -->
+
+                <div id="container">
+                    <div id="header">
+                    <div id="monthDisplay"></div>
+                    <div>
+                        <button id="backButton">Back</button>
+                        <button id="nextButton">Next</button>
+                    </div>
+                    </div>
+            
+                    <div id="weekdays">
+                    <div id="dname">Sunday</div>
+                    <div id="dname">Monday</div>
+                    <div id="dname">Tuesday</div>
+                    <div id="dname">Wednesday</div>
+                    <div id="dname">Thursday</div>
+                    <div id="dname">Friday</div>
+                    <div id="dname">Saturday</div>
+                    </div>
+            
+                    <div id="calendar"></div>
+                </div>
+            
+                <div id="newEventModal">
+                    <h2>New Event</h2>
+            
+                    <input id="eventTitleInput" placeholder="Event Title" />
+            
+                    <button id="saveButton">Save</button>
+                    <button id="cancelButton">Cancel</button>
+                </div>
+            
+                <div id="deleteEventModal">
+                    <h2>Event</h2>
+            
+                    <p id="eventText"></p>
+            
+                    <button id="deleteButton">Delete</button>
+                    <button id="closeButton">Close</button>
+                </div>
+            
+                <div id="modalBackDrop"></div>
+
+            </div>
+            <div id="adduser" class="tabcontent">
+              <div class="wrapper">
+                <div class="title-add">
+                  add new user
+                </div>
+                <div class="form">
+                  <div class="inputfield">
+                    <label>User Role</label>
+                    <div class="custom_select">
+                      <select>
+                        <option value="">Select</option>
+                        <option value="Student">Student</option>
+                        <option value="Professor">Professor</option>
+                        <option value="DEO">Data Entry Operator</option>
+                        <option value="Admin">Admin</option>
+                      </select>
+                    </div>
+                 </div> 
+                   <div class="inputfield">
+                      <label>First Name</label>
+                      <input type="text" class="input">
+                   </div>  
+                    <div class="inputfield">
+                      <label>Last Name</label>
+                      <input type="text" class="input">
+                   </div>  
+                   <div class="inputfield">
+                      <label>Registration Number</label>
+                      <input type="number" class="input">
+                   </div>  
+                  <!-- <div class="inputfield">
+                      <label>Confirm Password</label>
+                      <input type="password" class="input">
+                   </div>  -->
+                    
+                    <div class="inputfield">
+                      <label>Email Address</label>
+                      <input type="email" class="input">
+                    </div> 
+                    <div class="inputfield">
+                      <label>Phone Number</label>
+                      <input type="number" class="input">
+                    </div> 
+                  <!-- <div class="inputfield">
+                      <label>Address</label>
+                      <textarea class="textarea"></textarea>
+                   </div> 
+                  <div class="inputfield">
+                      <label>Postal Code</label>
+                      <input type="text" class="input">
+                   </div>  -->
+                  <div class="inputfield terms">
+                      <label class="check">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <p>Set Default Password</p>
+                   </div> 
+                  <div class="inputfield">
+                    <input type="submit" value="Add New User" class="btn-add">
+                  </div>
+                </div>
+            </div>	
+            </div>
+        </div>
+
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+    <script src="my_chart.js"></script>
+    <script src="tabs.js"></script>
+    <script src="calendar.js"></script>
+    <script>
+        // menu toggle
+        let toggle=document.querySelector('.toggle');
+        let navigation=document.querySelector('.navigation');
+        let main=document.querySelector('.main');
+
+        toggle.onclick=function(){
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+        // hover
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+        item.addEventListener('click', activeLink));
+    </script>
+</body>
+</html>

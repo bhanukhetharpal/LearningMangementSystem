@@ -1,1 +1,1 @@
-# LearningMangementSystem
+# university-management-system

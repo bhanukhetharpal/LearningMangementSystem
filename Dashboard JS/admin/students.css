@@ -1,0 +1,54 @@
+* {
+    font-family: sans-serif; /* Change your font family */
+  }
+  #students{
+    /* background: linear-gradient(135deg, rgb(240, 247, 247), rgb(204, 253, 253)); */
+    background: rgb(235, 255, 255);
+  }
+  #students h2{
+      text-align: center;
+      padding-top: 50px;
+  }
+  .content-table-students-1 {
+    border-collapse: collapse;
+    margin: 35px 0;
+    font-size: 1em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left:150px;
+  }
+  
+  .content-table-students-1 thead tr {
+    background-color: #64bdbd;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .content-table-students-1 th,
+  .content-table-students-1 td {
+    padding: 15px 18px;
+  }
+  
+  .content-table-students-1 tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .content-table-students-1 tbody tr:nth-of-type(even) {
+    background-color: rgb(229, 253, 253);
+  }
+  
+  .content-table-students-1 tbody tr:nth-of-type(odd) {
+    background-color: white;
+  }
+
+  .content-table-students-1 tbody tr:last-of-type {
+    border-bottom: 2px solid #64bdbd;
+  }
+  
+  .content-table-students-1 tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  }
